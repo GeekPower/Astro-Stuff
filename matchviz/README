@@ -1,0 +1,16 @@
+
+Simple gtk visualizer to check detected matches. Run like this:
+
+
+matcher f1 f2 > matches.txt
+matchviz f1 f2 matches.lst
+
+or
+
+matcher f1 f2 | vizmatch f1 f2 -
+
+
+
+
+
+
