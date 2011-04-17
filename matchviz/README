@@ -7,7 +7,7 @@ matchviz f1 f2 matches.lst
 
 or
 
-matcher f1 f2 | vizmatch f1 f2 -
+matcher f1 f2 | match f1 f2 -
 
 
 
