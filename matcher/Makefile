@@ -1,4 +1,4 @@
-CC	= gcc -Wall -O2 -g 
+CC	= gcc -Wall -O2 -g
 CFLAGS	= $(shell pkg-config --cflags glib-2.0)
 LIBS	= $(shell pkg-config --libs glib-2.0) -lm
 
@@ -17,4 +17,7 @@ groth86: groth86.o
 
 clean:
 	-rm -f *.o $(TARGETS)
+
+tags:
+	etags *.[ch]
 

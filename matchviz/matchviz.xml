@@ -13,6 +13,8 @@
             <property name="width_request">600</property>
             <property name="height_request">400</property>
             <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="has_focus">True</property>
           </object>
           <packing>
             <property name="position">0</property>

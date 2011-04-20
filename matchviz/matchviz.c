@@ -27,7 +27,7 @@ void on_window_destroy (GtkObject *obj, gpointer data)
 
 #define STARR 1.5
 static void draw_star_list(cairo_t *cr, GSList *stars,
-			   double xs, double ys, double r, double g, double b)
+			   double xs, double ys, double radius, double r, double g, double b)
 {
 	GSList *l;
 	struct star *s;
@@ -38,7 +38,7 @@ static void draw_star_list(cairo_t *cr, GSList *stars,
 	for (l = stars; l; l = g_slist_next(l)) {
 		s = (struct star *) l->data;
 
-		cairo_arc (cr, s->x * xs, s->y * ys, STARR, 0, 2 * M_PI);
+		cairo_arc (cr, s->x * xs, s->y * ys, radius, 0, 2 * M_PI);
 		cairo_stroke (cr);
 
 		/* draw pairing */
@@ -73,10 +73,10 @@ gboolean on_darea_expose (GtkObject *obj, GdkEventExpose *ev, gpointer data)
 	cairo_set_line_width (cr, 1.0);
 
 	/* first list red */
-	draw_star_list (cr, l1, xs, ys, 1.0, 0.0, 0.0);
+	draw_star_list (cr, l1, xs, ys, 1.0, 1.0, 0.0, 0.0);
 
 	/* second list green */
-	draw_star_list (cr, l2, xs, ys, 0.0, 1.0, 0.0);
+	draw_star_list (cr, l2, xs, ys, 2.0, 0.0, 1.0, 0.0);
 
 	cairo_destroy (cr);
 
